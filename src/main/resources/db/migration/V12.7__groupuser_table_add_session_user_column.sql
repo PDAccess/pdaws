@@ -1,0 +1,1 @@
+ALTER TABLE groupuser ADD connection_user VARCHAR(50);

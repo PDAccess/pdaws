@@ -1,0 +1,3 @@
+ALTER TABLE sessions
+ALTER COLUMN id TYPE INT
+USING id::integer;

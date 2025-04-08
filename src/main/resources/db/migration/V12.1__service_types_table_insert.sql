@@ -1,0 +1,1 @@
+insert into service_types (id, service_type_name, service_type, service_type_default_port, service_type_icon) values (9, 'MongoDB', 'D', 27017, 'mongodb');

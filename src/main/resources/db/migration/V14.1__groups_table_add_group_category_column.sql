@@ -1,0 +1,1 @@
+ALTER TABLE groups ADD group_category VARCHAR(50);

@@ -1,0 +1,1 @@
+ALTER TABLE IF EXISTS users ALTER COLUMN notification TYPE boolean USING notification::int::bool;

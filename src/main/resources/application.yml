@@ -1,0 +1,142 @@
+spring:
+  application:
+    name: pdaws
+  profiles:
+    active: '@spring.profiles.active@'
+  jpa:
+    properties:
+      javax:
+        persistence:
+          sharedCache:
+            mode: ENABLE_SELECTIVE
+      hibernate:
+        show_sql: true
+        use_sql_comments: false
+        format_sql: false
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        enable_lazy_load_no_trans: true
+        jdbc:
+          batch_size: 10
+        #        cache:
+        #          use_second_level_cache: true
+        #          region:
+        #            factory_class: org.hibernate.cache.ehcache.EhCacheRegionFactory
+        temp:
+          use_jdbc_metadata_defaults: false
+
+  flyway:
+    locations: classpath:db/migration/
+    out-of-order: true
+    base-line-on-migrate: true
+
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 2KB
+      max-file-size: 200KB
+      max-request-size: 215KB
+  # Embedded ActiveMQ Configuration Example
+  #  activemq:
+  #    broker-url: vm://embedded?broker.persistent=false,useShutdownHook=false
+  #    user: system
+  #    password: password
+  #    in-memory: true
+  #    non-blocking-redelivery: true
+  #    packages:
+  #      trust-all: false
+  #      trusted: com.memorynotfound
+  #    pool:
+  #      block-if-full: true
+  #      block-if-full-timeout: -1
+  #      create-connection-on-startup: true
+  #      enabled: false
+  #      expiry-timeout: 0
+  #      idle-timeout: 30000
+  #      max-connections: 1
+  #      maximum-active-session-per-connection: 500
+  #      reconnect-on-exception: true
+  #      time-between-expiration-check: -1
+  #      use-anonymous-producers: true
+  artemis:
+    mode: EMBEDDED
+    host: localhost
+    port: 61616
+    embeded:
+      enabled: true
+
+  # Spring JMS Settings
+  jms:
+    pub-sub-domain: false
+    listener:
+      acknowledge-mode: auto
+      auto-startup: true
+      concurrency: 5
+      max-concurrency: 10
+    template:
+      default-destination:
+      delivery-mode: non_persistent
+      priority: 9
+      qos-enabled: true
+      receive-timeout: 1000
+      time-to-live: 36000
+
+ldap:
+  group:
+    objectClass: group
+    name: cn
+    description: description
+    distinguishedName: distinguishedName
+    memberAttribute: member
+  user:
+    objectClass: person
+    username: sAMAccountName
+    firstName: givenName
+    lastName: sn
+    mail: mail
+    telephoneNumber: telephoneNumber
+    distinguishedName: distinguishedName
+  account:
+    objectClass: person
+    username: sAMAccountName
+    password: password
+  device:
+    name: cn
+    description: description
+    distinguishedName: distinguishedName
+    objectClass: device
+  common:
+    name: name
+    distinguishedName: distinguishedName
+    objectClass: objectClass
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus,info,health
+
+credentialManager:
+  endpoint: http://credential-manager:8081
+
+logging:
+  partition:
+    before: 20
+    after: 7
+
+service:
+  commit-id: @git.branch@ - @git.commit.id.abbrev@
+
+server:
+  error:
+    path: /error
+    whitelabel:
+      enabled: false
+
+## Logging configuration print only messages for tutorial purposes
+#logging:
+#  pattern:
+#    console: "%msg%n"
+#  level:
+#    - ".=info"
+#    - "com.memorynotfound=debug"
+#    - "org.springframework=info"

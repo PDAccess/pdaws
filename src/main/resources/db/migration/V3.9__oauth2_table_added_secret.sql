@@ -1,0 +1,2 @@
+ALTER TABLE oauth2 ADD appid VARCHAR(50);
+ALTER TABLE oauth2 ADD secret VARCHAR(50);

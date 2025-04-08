@@ -1,0 +1,13 @@
+pdaws.iml
+pdaws.ipr
+pdaws.iws
+target/*
+.idea
+.idea/*
+*.prefs
+.classpath
+.project
+logs/*
+.openapi-generator
+.gitlab-ci.yml
+src/main/resources/application-remote-prod.yml

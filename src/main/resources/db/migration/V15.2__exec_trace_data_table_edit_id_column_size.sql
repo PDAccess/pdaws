@@ -1,0 +1,1 @@
+ALTER TABLE exec_trace_data ALTER COLUMN id TYPE BIGINT USING id::bigint;

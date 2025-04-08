@@ -1,0 +1,1 @@
+ALTER TABLE inventory ADD origin_id varchar(255);

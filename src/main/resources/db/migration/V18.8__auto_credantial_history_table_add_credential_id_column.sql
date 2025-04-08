@@ -1,0 +1,1 @@
+ALTER TABLE auto_credantial_history ADD IF NOT EXISTS credential_id VARCHAR(50);

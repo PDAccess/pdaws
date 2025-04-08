@@ -1,0 +1,1 @@
+ALTER TABLE groupuser ADD membership_type VARCHAR(50);

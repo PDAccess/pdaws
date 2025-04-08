@@ -1,0 +1,54 @@
+spring:
+
+  #datasource configuration
+  datasource:
+    url: jdbc:postgresql://postgresqldb:5432/pda?ApplicationName=pdaws
+    username: pda
+    password: pda
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      minimumIdle: 10
+      maximumPoolSize: 50
+      idleTimeout: 30000
+      poolName: pdaws
+      maxLifetime: 2000000
+      connectionTimeout: 10000
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+        show_sql: false
+        generate_statistics: false
+        ddl-auto: validate
+
+  artemis:
+    mode: native
+    host: message-queue
+    port: 61616
+    user: admin
+    password: H2hsecure123
+
+database:
+  url: http://databaseproxy:8080
+terminal:
+  url: http://terminalproxy:8080
+ldapws:
+  url: http://ldapws:8081
+
+  #guacamole config
+guacd:
+  host: guacd
+  portnumber: 4822
+  #vault config
+vault:
+  endpoint: http://pvault:4050
+  enabled: true
+
+management:
+  health:
+    probes:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: prometheus,info,health

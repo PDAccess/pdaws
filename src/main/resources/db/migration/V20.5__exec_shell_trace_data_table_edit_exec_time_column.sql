@@ -1,0 +1,1 @@
+ALTER TABLE exec_shell_trace_data ALTER COLUMN exec_time TYPE BIGINT USING EXTRACT(EPOCH FROM exec_time);

@@ -1,0 +1,1 @@
+ALTER TABLE inventory ADD video_record BOOLEAN;

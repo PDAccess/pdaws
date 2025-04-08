@@ -1,0 +1,6 @@
+ALTER TABLE plogs
+ADD id INTEGER PRIMARY KEY;
+
+CREATE SEQUENCE plogs_table_sequence
+    INCREMENT 1
+    MINVALUE 1;

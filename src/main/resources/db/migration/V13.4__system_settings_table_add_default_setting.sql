@@ -1,0 +1,2 @@
+INSERT INTO system_settings (id,setting_tag, setting_value, setting_short_code, setting_category, created_at, updated_at) VALUES
+(38, 'break_check_out_time', '2', 'BCOT', 'vaultautosettings', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);

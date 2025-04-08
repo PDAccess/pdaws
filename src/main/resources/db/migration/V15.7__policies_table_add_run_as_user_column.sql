@@ -1,0 +1,1 @@
+ALTER TABLE policy ADD run_as_user VARCHAR(50);

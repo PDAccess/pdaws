@@ -1,0 +1,1 @@
+ALTER TABLE users ADD ldap_dn VARCHAR(50);

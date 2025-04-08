@@ -1,0 +1,1 @@
+ALTER TABLE breaktheglass ADD checked_time TIMESTAMP;

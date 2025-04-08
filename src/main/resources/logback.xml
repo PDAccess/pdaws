@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <statusListener class="ch.qos.logback.core.status.NopStatusListener"/>
+    <!-- <property name="LOG_DIR" value="logs/pdaws"/> -->
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>
+                %d{dd-MM-yyyy HH:mm:ss.SSS} %magenta([%thread])
+                %highlight(%-5level) %logger.%M -
+                %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <appender name="STDOUT2" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>
+                %d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <!-- <appender name="SERVER_LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_DIR}/server.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_DIR}/server.%d{yyyy-MM-dd}.%i.log
+            </fileNamePattern>
+            <maxFileSize>10MB</maxFileSize>
+            <maxHistory>100</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{dd/MM/yyyy:HH:mm:ss} - [%t] - %-5level - %logger{36} -%msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="MAIL_LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_DIR}/mail.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_DIR}/mail.%d{yyyy-MM-dd}.%i.log
+            </fileNamePattern>
+            <maxFileSize>10MB</maxFileSize>
+            <maxHistory>100</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{dd/MM/yyyy:HH:mm:ss} - [%t] - %-5level - %logger{36} -%msg%n</pattern>
+        </encoder>
+    </appender> -->
+
+    <springProfile name="pod">
+        <root level="info">
+            <appender-ref ref="STDOUT"/>
+        </root>
+
+        <logger name="com.h2h.pda" additivity="false" level="debug">
+            <appender-ref ref="STDOUT"/>
+        </logger>
+
+        <logger name="com.h2h.pda.jwt.providers.PDAWSAuthenticationProvider" additivity="false" level="trace">
+            <appender-ref ref="STDOUT"/>
+        </logger>
+    </springProfile>
+
+
+    <springProfile name="dev">
+        <root level="info">
+            <appender-ref ref="STDOUT"/>
+        </root>
+        <logger name="org.hibernate.SQL" level="debug">
+            <!--            <appender-ref ref="STDOUT"/>-->
+        </logger>
+        <logger name="org.hibernate.type" level="debug">
+            <!--            <appender-ref ref="STDOUT"/>-->
+        </logger>
+
+        <logger name="com.h2h.pda" additivity="false" level="debug">
+            <!--            <appender-ref ref="STDOUT"/>-->
+        </logger>
+    </springProfile>
+
+    <springProfile name="sonar">
+        <root level="info">
+            <appender-ref ref="STDOUT"/>
+        </root>
+        <logger name="com.h2h.pda" additivity="false" level="info">
+            <appender-ref ref="STDOUT"/>
+        </logger>
+        <!-- <logger name="org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl" level="error">
+            <appender-ref ref="SERVER_LOG"/>
+        </logger>
+
+        <logger name="org.apache.activemq.audit.message" level="error">
+            <appender-ref ref="SERVER_LOG"/>
+        </logger>
+
+        <logger name="org.apache.activemq.audit.base" level="error">
+            <appender-ref ref="SERVER_LOG"/>
+        </logger> -->
+    </springProfile>
+
+    <springProfile name="prod">
+        <root level="INFO">
+            <appender-ref ref="STDOUT"/>
+        </root>
+        <!-- <logger name="org.apache.activemq.artemis.core.server.impl.ActiveMQServerImpl" level="error">
+            <appender-ref ref="SERVER_LOG"/>
+        </logger>
+
+        <logger name="com.h2h.pda.service.impl.SendEmailServiceImpl" level="info">
+            <appender-ref ref="MAIL_LOG"/>
+        </logger>
+
+        <logger name="org.apache.activemq.audit.message" level="error">
+            <appender-ref ref="SERVER_LOG"/>
+        </logger>
+
+        
+        <logger name="com.zaxxer.hikari.HikariConfig" level="info">
+            <appender-ref ref="SERVER_LOG"/>
+        </logger>
+        <logger name="com.zaxxer.hikari" level="info">
+            <appender-ref ref="SERVER_LOG"/>
+        </logger> -->
+
+        <!--  hibernate query debug -->
+        <!--        <logger name="org.hibernate.SQL" level="debug">-->
+        <!--            <appender-ref ref="SERVER_LOG"/>-->
+        <!--        </logger>-->
+        <!--        <logger name="org.hibernate.type" level="trace">-->
+        <!--            <appender-ref ref="SERVER_LOG"/>-->
+        <!--        </logger>-->
+    </springProfile>
+</configuration>

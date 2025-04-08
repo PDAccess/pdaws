@@ -1,0 +1,1 @@
+ALTER TABLE oauth2 ADD scopes VARCHAR(255);

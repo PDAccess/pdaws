@@ -1,0 +1,1 @@
+ALTER TABLE groups ADD ldap_dn VARCHAR(50);

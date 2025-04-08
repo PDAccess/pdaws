@@ -1,0 +1,1 @@
+ALTER TABLE exec_trace_data ADD report_time TIMESTAMP;

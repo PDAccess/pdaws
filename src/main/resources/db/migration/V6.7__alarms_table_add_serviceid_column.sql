@@ -1,0 +1,1 @@
+ALTER TABLE alarms ADD service_id VARCHAR(255);

@@ -1,0 +1,1 @@
+alter table auto_credantial_settings drop column if exists inventory_id;

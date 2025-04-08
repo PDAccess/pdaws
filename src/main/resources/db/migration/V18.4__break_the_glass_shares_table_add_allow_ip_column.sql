@@ -1,0 +1,1 @@
+ALTER TABLE break_the_glass_shares ADD IF NOT EXISTS allow_ip VARCHAR(50);

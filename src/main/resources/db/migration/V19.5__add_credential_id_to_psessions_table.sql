@@ -1,0 +1,1 @@
+ALTER TABLE psessions ADD IF NOT EXISTS credential_id VARCHAR(36);

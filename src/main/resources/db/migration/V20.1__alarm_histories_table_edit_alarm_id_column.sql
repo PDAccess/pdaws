@@ -1,0 +1,1 @@
+ALTER TABLE alarm_histories ALTER COLUMN alarm_id DROP NOT NULL;

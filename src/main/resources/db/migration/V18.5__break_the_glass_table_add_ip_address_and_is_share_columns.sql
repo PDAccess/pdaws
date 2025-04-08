@@ -1,0 +1,2 @@
+ALTER TABLE breaktheglass ADD IF NOT EXISTS ip_address VARCHAR(50);
+ALTER TABLE breaktheglass ADD IF NOT EXISTS is_share BOOLEAN DEFAULT FALSE;

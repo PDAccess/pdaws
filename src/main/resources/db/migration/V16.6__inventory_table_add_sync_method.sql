@@ -1,0 +1,1 @@
+ALTER TABLE inventory ADD sync_method VARCHAR(50);

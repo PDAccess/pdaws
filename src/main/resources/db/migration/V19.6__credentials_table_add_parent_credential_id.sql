@@ -1,0 +1,1 @@
+ALTER TABLE credentials ADD IF NOT EXISTS parent_credential_id VARCHAR(36);

@@ -1,0 +1,30 @@
+spring:
+
+  #datasource configuration
+  datasource:
+    url: jdbc:postgresql://postgresqldb/pda?ApplicationName=pdaws
+    username: pda
+    password: pda
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show_sql: false
+    properties:
+      hibernate:
+        show_sql: false
+        ddl-auto: validate
+
+database:
+  url: http://databaseproxy-test:8080
+terminal:
+  url: http://terminalproxy-test:8080
+ldapws:
+  url: http://ldapws:8081
+
+  #guacamole config
+guacd:
+  host: guacd
+  portnumber: 4822
+  #vault config
+vault:
+  endpoint: http://pvault-test:4050
+  enabled: true

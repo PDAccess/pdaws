@@ -1,0 +1,13 @@
+ALTER TABLE mfa
+ALTER COLUMN code TYPE VARCHAR(50);
+
+ALTER TABLE mfa
+ADD COLUMN google_authenticator BOOLEAN,
+ADD COLUMN sms BOOLEAN,
+ADD COLUMN email BOOLEAN;
+
+ALTER TABLE mfa
+RENAME code TO secret_key;
+
+ALTER TABLE mfa
+ADD COLUMN last_checked_at TIMESTAMP;

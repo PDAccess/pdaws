@@ -1,0 +1,1 @@
+ALTER TABLE ansible_histories ADD user_id character varying(36);

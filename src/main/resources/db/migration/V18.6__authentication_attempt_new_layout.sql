@@ -1,0 +1,1 @@
+ALTER TABLE authentication_attempts ADD IF NOT EXISTS service_id VARCHAR(50);

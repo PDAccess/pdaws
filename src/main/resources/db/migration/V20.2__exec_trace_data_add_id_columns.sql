@@ -1,0 +1,4 @@
+ALTER TABLE exec_trace_data ADD IF NOT EXISTS ppid INTEGER;
+ALTER TABLE exec_trace_data ADD IF NOT EXISTS pgid INTEGER;
+ALTER TABLE exec_trace_data ADD IF NOT EXISTS psid INTEGER;
+ALTER TABLE exec_trace_data ADD IF NOT EXISTS tgid INTEGER;

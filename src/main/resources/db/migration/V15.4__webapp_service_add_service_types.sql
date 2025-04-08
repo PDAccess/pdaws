@@ -1,0 +1,2 @@
+insert into service_types (id, service_type_name, service_type, service_type_default_port, service_type_icon) VALUES (10, 'Webapp', 'W', 80,'webapp');
+insert into operating_systems (id, operating_system_name, operating_system_type, operating_system_logo, operating_system_type_logo) VALUES (10, 'Webapp', '', '','');

@@ -1,0 +1,11 @@
+alter table policy add column IF NOT EXISTS create_user_id VARCHAR(255);
+alter table policy add column IF NOT EXISTS sudo_user VARCHAR(255);
+alter table policy add column IF NOT EXISTS sudo_option TEXT;
+alter table policy alter column run_as_user type VARCHAR(255);
+alter table policy add column IF NOT EXISTS run_as_group VARCHAR(255);
+alter table policy add column IF NOT EXISTS not_before VARCHAR(255);
+alter table policy add column IF NOT EXISTS not_after VARCHAR(255);
+alter table policy add column IF NOT EXISTS sudo_host VARCHAR(255);
+alter table policy add column IF NOT EXISTS sudo_order INT default 0;
+alter table policy add column IF NOT EXISTS policy_type int;
+alter table policy add column IF NOT EXISTS updated_at TIMESTAMP;

@@ -1,0 +1,2 @@
+INSERT INTO system_settings (id,setting_tag, setting_value, setting_short_code, setting_category, created_at, updated_at) VALUES
+(48, 'default_connection_user', 'false', 'SDCU', 'generalSettings', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);

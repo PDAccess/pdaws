@@ -1,0 +1,31 @@
+spring:
+  #datasource configuration
+  datasource:
+    url: jdbc:postgresql://localhost:5432/pda_prod?ApplicationName=pdaws
+    username: pda
+    password: pda
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show_sql: true
+    hibernate:
+      ddl-auto: validate
+      format_sql: true
+
+database:
+  url: http://localhost:8081
+terminal:
+  url: http://localhost:8082
+ldapws:
+  url: http://localhost:8081
+
+  #guacamole config
+guacd:
+  host: localhost
+  portnumber: 4822
+  #vault config
+vault:
+  endpoint: http://localhost:4050
+  enabled: true
+
+credentialManager:
+  endpoint: http://localhost:8085

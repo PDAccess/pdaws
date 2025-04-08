@@ -1,0 +1,1 @@
+ALTER TABLE inventory ADD last_access_time TIMESTAMP;

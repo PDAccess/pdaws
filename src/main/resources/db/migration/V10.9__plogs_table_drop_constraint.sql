@@ -1,0 +1,2 @@
+ALTER TABLE plogs
+DROP CONSTRAINT plogs_session_id_foreign;

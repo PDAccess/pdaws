@@ -1,0 +1,1 @@
+ALTER TABLE credentials ADD IF NOT EXISTS check_status BOOLEAN DEFAULT FALSE;

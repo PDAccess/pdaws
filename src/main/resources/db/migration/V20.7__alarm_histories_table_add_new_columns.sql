@@ -1,0 +1,4 @@
+ALTER TABLE IF EXISTS alarm_histories ADD IF NOT EXISTS executed_at BIGINT;
+ALTER TABLE IF EXISTS alarm_histories ADD IF NOT EXISTS service_id VARCHAR(255);
+ALTER TABLE IF EXISTS alarm_histories ADD IF NOT EXISTS session_id BIGINT;
+ALTER TABLE IF EXISTS alarm_histories ADD IF NOT EXISTS session_type VARCHAR(50);

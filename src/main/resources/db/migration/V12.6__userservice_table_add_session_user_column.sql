@@ -1,0 +1,1 @@
+ALTER TABLE userservice ADD connection_user VARCHAR(50);

@@ -1,0 +1,18 @@
+################################################################################
+# ######  ######     #
+# #     # #     #   # #    ####   ####  ######  ####   ####
+# #     # #     #  #   #  #    # #    # #      #      #
+# ######  #     # #     # #      #      #####   ####   ####
+# #       #     # ####### #      #      #           #      #
+# #       #     # #     # #    # #    # #      #    # #    #
+# #       ######  #     #  ####   ####  ######  ####   ####
+#
+# https://www.pdaccess.com 2025
+# Application: @project.name@ (@project.version@)
+# Compile Time: @timestamp@
+# Commit: @git.commit.time@ @git.commit.id.describe-short@
+#         @git.commit.message.full@
+# Last Commit User: @git.commit.user.name@ @git.commit.user.email@
+# Origin: @git.remote.origin.url@ Profile: @spring.profiles.active@
+#
+#################################################################################

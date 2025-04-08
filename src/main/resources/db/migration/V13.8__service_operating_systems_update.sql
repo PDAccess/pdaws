@@ -1,0 +1,1 @@
+insert into operating_systems (id, operating_system_name, operating_system_type, operating_system_logo, operating_system_type_logo) values(9, 'Cisco', 'linux', 'cisco', 'linux');

@@ -1,0 +1,1 @@
+ALTER TABLE connection_users ADD is_admin BOOLEAN;
